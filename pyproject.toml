@@ -1,0 +1,47 @@
+[project]
+name = "docqa"
+version = "1.0.0"
+description = "Multi-user document search and conversational Q&A over earnings-call PDFs"
+requires-python = ">=3.10"
+dependencies = [
+    "Flask>=3.0,<4.0",
+    "pypdf>=4.0,<6.0",
+    "reportlab>=4.0,<5.0",
+    "anthropic>=0.40,<1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<9.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 90
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 90
+
+[tool.ruff]
+line-length = 90
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+    "unit: fast, isolated unit tests",
+    "integration: tests that exercise multiple components together",
+]

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+
+# Test / tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+
+# Generated data layer (rebuilt by scripts/build_index.py on first run)
+data/docqa.db
+data/chroma/
+
+# NOTE: data/pdfs/*.pdf ARE committed on purpose — they are the sample dataset
+# and are reproducible via scripts/generate_sample_pdfs.py.

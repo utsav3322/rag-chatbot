@@ -1,0 +1,30 @@
+{
+  "_comment": "Simulated authentication + per-user document access control. Each user may read only the listed company keys. Company keys must match the PDF filename stems in data/pdfs/ and the registry in src/docqa/config.py.",
+  "users": [
+    {
+      "email": "alice@email.com",
+      "display_name": "Alice",
+      "companies": ["novatech"]
+    },
+    {
+      "email": "bob@email.com",
+      "display_name": "Bob",
+      "companies": ["helios", "verdant"]
+    },
+    {
+      "email": "charlie@email.com",
+      "display_name": "Charlie",
+      "companies": ["orion", "lumina"]
+    },
+    {
+      "email": "dana@email.com",
+      "display_name": "Dana",
+      "companies": ["novatech", "lumina"]
+    },
+    {
+      "email": "admin@email.com",
+      "display_name": "Admin (all access)",
+      "companies": ["novatech", "helios", "verdant", "orion", "lumina"]
+    }
+  ]
+}

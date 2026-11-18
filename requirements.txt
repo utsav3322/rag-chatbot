@@ -1,0 +1,18 @@
+# Core runtime dependencies (all have Python 3.10–3.14 wheels; no native build needed)
+Flask>=3.0,<4.0
+Werkzeug>=3.0,<4.0            # password hashing (generate/check_password_hash)
+pypdf>=4.0,<6.0
+reportlab>=4.0,<5.0
+
+# Vector store + embeddings for semantic RAG. Chroma ships the all-MiniLM-L6-v2
+# embedding model via ONNX runtime (no PyTorch). If this cannot be installed or
+# the model cannot be downloaded, the app automatically falls back to the
+# built-in TF-IDF retriever (set DOCQA_VECTOR_STORE=0 to force that).
+chromadb>=1.0,<2.0
+
+# Optional: enables LLM-synthesised answers via Claude when ANTHROPIC_API_KEY is set.
+# The system runs fully without it (extractive fallback).
+anthropic>=0.40,<1.0
+
+# Dev / test
+pytest>=8.0,<9.0
